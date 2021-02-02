@@ -1,0 +1,80 @@
+{
+  "items": [
+    {
+      "name": "iPhone 11 Pro",
+      "description": "Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life",
+      "brand": "Apple",
+      "price": "58.99",
+      "stock": "100",
+      "id": 2
+    },
+    {
+      "name": "Cannon EOS 80D DSLR Camera",
+      "description": "Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design",
+      "brand": "Samsung",
+      "price": "929.99",
+      "stock": "5",
+      "id": 3
+    },
+    {
+      "name": "Sony Playstation 4 Pro White Version",
+      "description": "The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music",
+      "brand": "Samsung",
+      "price": "400",
+      "stock": "15",
+      "id": 4
+    },
+    {
+      "name": "Iphone XS vip pro max premium",
+      "description": "This is a new product",
+      "brand": "Samsung",
+      "price": "15000",
+      "stock": "20",
+      "id": 5
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "userId": "103960060256549732379",
+      "items": [
+        {
+          "id": 2,
+          "name": "iPhone 11 Pro",
+          "quantity": 4
+        },
+        {
+          "id": 3,
+          "name": "Cannon EOS 80D DSLR Camera",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": "106194729861437140097",
+      "items": [
+        {
+          "id": 6,
+          "name": "Iphone XS vip pro max premium",
+          "quantity": 4
+        },
+        {
+          "id": 2,
+          "name": "iPhone 11 Pro",
+          "quantity": 5
+        },
+        {
+          "id": 4,
+          "name": "Sony Playstation 4 Pro White Version",
+          "quantity": 7
+        },
+        {
+          "id": 3,
+          "name": "Cannon EOS 80D DSLR Camera",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}
