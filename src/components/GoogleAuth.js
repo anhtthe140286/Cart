@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { signIn, signOut } from '../actions'
+import React, {useEffect} from 'react';
+import {connect, useDispatch} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {signIn, signOut} from '../actions'
+import {CLEAR_USER_ITEMS} from '../actions/types'
 
 const GoogleAuth = (props) => {
+    const dispatch = useDispatch();
     let auth;
     useEffect(() => {
         window.gapi.load('client:auth2', () => {
@@ -31,6 +33,9 @@ const GoogleAuth = (props) => {
     };
 
     const onSignedOutClick = () => {
+        dispatch({
+            type: CLEAR_USER_ITEMS
+        })
         auth.signOut();
     };
 
@@ -41,7 +46,7 @@ const GoogleAuth = (props) => {
             return (
                 <button onClick={onSignedOutClick} className="ui red google button">
                     <i className="google icon" />
-                    <Link to="/" style={{color:'white'}}>
+                    <Link to="/" style={{color: 'white'}}>
                         Sign Out
                     </Link>
                 </button>
@@ -50,7 +55,7 @@ const GoogleAuth = (props) => {
             return (
                 <button onClick={onSignedInClick} className="ui red google button">
                     <i className="google icon" />
-                    <Link to="/" style={{color:'white'}}>
+                    <Link to="/" style={{color: 'white'}}>
                         Sign in with Google
                     </Link>
                 </button>
@@ -65,7 +70,7 @@ const GoogleAuth = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    return { isSignedIn: state.auth.isSignedIn };
+    return {isSignedIn: state.auth.isSignedIn};
 }
 
-export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
+export default connect(mapStateToProps, {signIn, signOut})(GoogleAuth);

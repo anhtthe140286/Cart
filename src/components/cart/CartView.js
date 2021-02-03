@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchUserItems } from '../../actions';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {fetchUserItems} from '../../actions';
 
 const CartView = (props) => {
     useEffect(() => {
-        props.fetchUserItems(props.currentUserId);
-    });
+        props.currentUserId && props.fetchUserItems(props.currentUserId);
+    }, [props.currentUserId]);
 
     const renderList = () => {
         if (!props.cart[0]) {
@@ -55,4 +55,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { fetchUserItems })(CartView);
+export default connect(mapStateToProps, {fetchUserItems})(CartView);
